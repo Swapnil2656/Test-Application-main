@@ -26,3 +26,14 @@ app.get('/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// ─── CarboniX Auto-injected (do not remove) ───────────────────────────────
+const { startTelemetry } = require('../carbonix-telemetry');
+startTelemetry({
+  instanceId:   process.env.INSTANCE_ID    || 'LAPTOP-PGMKJMT9',
+  instanceType: process.env.INSTANCE_TYPE  || 't3.medium',
+  provider:     process.env.CLOUD_PROVIDER || 'aws',
+  region:       process.env.AWS_REGION     || 'ap-south-1',
+  projectName:  process.env.APP_NAME       || 'backend',
+});
+// ───────────────────────────────────────────────────────────────────────────

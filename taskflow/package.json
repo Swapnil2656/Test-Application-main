@@ -6,7 +6,8 @@
     "setup": "npm run install:all && npm run db:setup",
     "db:setup": "cd backend && npx prisma db push && npx prisma generate",
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
-    "db:studio": "cd backend && npx prisma studio"
+    "db:studio": "cd backend && npx prisma studio",
+    "deploy:carbonix": "npx @carbonix/cli app deploy --project proj_c879d8f2afeb9912068123ac4fa5d5beefd83eaba997541d"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
