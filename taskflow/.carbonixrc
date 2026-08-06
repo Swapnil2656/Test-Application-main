@@ -1,7 +1,0 @@
-{
-  "apiKey": "cbx_c879d8f2afeb9912068123ac4fa5d5beefd83eaba997541d",
-  "provider": "aws",
-  "region": "ap-south-1",
-  "baseUrl": "https://api-production-f6965.up.railway.app",
-  "projectName": "taskflow-root"
-}

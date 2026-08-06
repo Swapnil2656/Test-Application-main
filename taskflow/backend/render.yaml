@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: taskflow-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 4005
+      - key: CARBONIX_API_KEY
+        sync: false
