@@ -8,4 +8,4 @@ cmds = ["cd taskflow/backend && npm install"]
 cmds = ["cd taskflow/backend && npx prisma generate && npm run build"]
 
 [start]
-cmd = "cd taskflow/backend && npx prisma db push --accept-data-loss && node dist/index.js"
+cmd = "cd taskflow/backend && (npx prisma db push --accept-data-loss || echo 'DB push failed, starting anyway') && node dist/index.js"
