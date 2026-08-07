@@ -30,9 +30,9 @@ export const register = async (req: Request, res: Response) => {
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '7d' });
 
     res.status(201).json({ token, user: { id: user.id, email: user.email } });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
+  } catch (error: any) {
+    console.error('[REGISTER ERROR]', error);
+    res.status(500).json({ message: 'Server error', detail: error?.message || String(error) });
   }
 };
 
@@ -57,9 +57,9 @@ export const login = async (req: Request, res: Response) => {
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '7d' });
 
     res.json({ token, user: { id: user.id, email: user.email } });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
+  } catch (error: any) {
+    console.error('[LOGIN ERROR]', error);
+    res.status(500).json({ message: 'Server error', detail: error?.message || String(error) });
   }
 };
 
