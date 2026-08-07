@@ -55,7 +55,7 @@ app.post('/debug/load', (req, res) => {
   res.status(200).json({ status: 'ok', loadDurationMs: ms });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT as number, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
 

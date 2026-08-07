@@ -15,8 +15,6 @@ COPY . .
 # Build TypeScript
 RUN npx tsc
 
-# Expose port
-EXPOSE 4000
-
+# Let Railway inject PORT dynamically
 # Start: push DB schema then run server
 CMD sh -c "(npx prisma db push --accept-data-loss || echo 'DB push failed, starting server anyway...') && node dist/index.js"
