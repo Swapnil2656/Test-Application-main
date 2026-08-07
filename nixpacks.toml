@@ -5,7 +5,7 @@ node = {}
 cmds = ["cd taskflow/backend && npm install"]
 
 [phases.build]
-cmds = ["cd taskflow/backend && npm run build"]
+cmds = ["cd taskflow/backend && npm run build && npx prisma migrate deploy"]
 
 [start]
 cmd = "cd taskflow/backend && npm start"
